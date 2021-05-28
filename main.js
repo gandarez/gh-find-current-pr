@@ -12,9 +12,8 @@ async function main() {
         commit_sha: sha,
     });
 
-    const pr = result.data.length > 0 && result.data.filter(el => el.state === 'open')[0];
+    const pr = result.data.length > 0 && result.data.filter(el => el.state === 'closed')[0];
 
-    core.setOutput('pr', pr && pr.number || '');
     core.setOutput('number', pr && pr.number || '');
     core.setOutput('title', pr && pr.title || '');
     core.setOutput('body', pr && pr.body || '');

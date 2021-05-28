@@ -23,5 +23,5 @@ Additionally, `title` and `body` outputs are available as well to get the respec
       - run: echo "Your PR is ${PR}"
         if: success() && steps.findPr.outputs.number
         env:
-          PR: ${{ steps.findPr.outputs.pr }}
+          PR: ${{ steps.findPr.outputs.number }}
 ```
